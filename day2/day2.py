@@ -1,5 +1,6 @@
-x="rxzgrqeightseven18five4txv"
-y=['one','two','three','four','five','six','seven','eight','nine']
+x="sevenine"
+nums=['one','two','three','four','five','six','seven','eight','nine']
+
 def concat(y:str):
     for i in y:
         if i.isdigit():
@@ -12,20 +13,34 @@ def concat(y:str):
             break
     ans=first+last
     ans=int(ans)
-    # print(ans)
+    #print(ans)
     return ans
 
+def word_to_num(word):
+    for i in nums:
+        word=word.replace(i,str(nums.index(i)+1))
+    num=concat(word)
+    return num
+print(word_to_num(x))
 
-with open("day1input.txt",'r') as f:
-    data=f.readlines()
-summ=0
-for line in data:
-    new_line=line
-    for i in y:
-        new_line=new_line.replace(i,str(y.index(i)+1))
-    print(new_line)
-    summ=summ+concat(new_line)
-print(summ)
+
+
+# with open("day2input.txt",'r') as f:
+#     data=f.readlines()
+#     print(data[0],data[-1])
+    
+# summ=0
+# for line in data:
+#     ans=word_to_num(line)
+#     summ=summ+ans
+# print(summ)
+
+#     for i in y:
+#         new_line=new_line.replace(i,str(y.index(i)+1))
+#     # print(new_line)
+#     summ=summ+concat(new_line)
+
+# print(summ)
 
     
 
